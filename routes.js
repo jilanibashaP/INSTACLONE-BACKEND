@@ -32,8 +32,8 @@ router.post("/form", uploader.single('file'), async (req, res) => {
             Author:req.body.Author,
             Location:req.body.Location,
             Description:req.body.Description,
-            Likes:Math.ceil(Math.random()*1000)
-            // Date:Date.now()
+            Likes:Math.ceil(Math.random()*1000),
+            Date:Date.now()
         });
 
         console.log(data)
