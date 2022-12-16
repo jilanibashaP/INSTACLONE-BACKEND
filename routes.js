@@ -4,7 +4,7 @@ const cloudinary = require("./cloudinary")
 const InstaPost = require("./models/schema")
 const bodyParser = require("body-parser");
 router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({ extended: false }))
+// router.use(bodyParser.urlencoded({ extended: false }))
 
 router.get("/data", async (req, res) => {
     try {
@@ -14,7 +14,7 @@ router.get("/data", async (req, res) => {
         })
     }
     catch (e) {
-        res.send.json({
+        res.json({
             status: "failed",
             message: e.message
         })
@@ -36,7 +36,7 @@ router.post("/form", uploader.single('file'), async (req, res) => {
             Date:Date.now()
         });
 
-        console.log(data)
+        // console.log(data)
 
         return res.json({
             success: true,
@@ -49,4 +49,5 @@ router.post("/form", uploader.single('file'), async (req, res) => {
         });
     }
 });
+
 module.exports = router
